@@ -21,3 +21,20 @@
 */
 
 // YOUR CODE HERE
+
+function uniformString(palindrome) {
+    var uniformString = palindrome.toLowerCase();
+    uniformString = uniformString.replace(/[., \/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    return uniformString;
+}
+//All incoming strings will be made all lowercase, accounting for
+//and removing punctuation
+
+
+function isPalindrome(palindrome) {
+    palindrome = uniformString(palindrome);
+	for ( var i=0; i <palindrome.length/2; i++) {
+		return (palindrome.charAt(i) === palindrome.charAt(palindrome.length-1));
+    //Compares characters starting at both ends of the String
+	}
+}
